@@ -611,7 +611,7 @@
 .imgdesc{
   position: absolute;
   top: 25%;
-  left: 50%;
+  left: 42%;
   width: 50%;
   height: 60%;
   transition: .6s ease;
@@ -633,10 +633,7 @@
   position: absolute;
   max-width: 200px;
   top: 85%;
-  left: 0;
-  right: 0;
-  margin-right: auto;
-  margin-left: auto;
+  left: 44%;
   background-color: #818181;
 }
 
