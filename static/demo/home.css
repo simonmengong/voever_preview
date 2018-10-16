@@ -31,14 +31,15 @@ body{
 /* profile-info*/
 
 .profile-info{
-    height: 200px;
+    height: 180px;
     width: 275px;
     background-color: #ffffff;
     border-radius: 3px;
     position: absolute;
     top: 60px;
-    left: 120px;
+    left: 9%;
     border: thin solid #d3d3d3;
+    display: none;
 }
 
 .profil-info-header{
@@ -58,7 +59,7 @@ body{
 
 .photo-container {
     margin-top: 100px;
-    margin-bottom: auto;
+    margin-bottom: 0;
     margin-left: 0;
 }
 
@@ -71,13 +72,32 @@ body{
     position: relative;
 }
 
+.social-desc{
+    text-align: center;
+    margin-top: 0;
+}
+
 .desc-title {
     color: #d3d3d3;
     font-size: 14px;
     margin-bottom: 0;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 0;
+    line-height: 15px;
     cursor: pointer;
+}
+
+.pi-username{
+    display: inline;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0;
+    line-height: 16px;
+}
+
+.profil-info-desc{
+    margin-top: 0;
+    vertical-align: top;
 }
 
 .desc-title:hover{
@@ -89,6 +109,7 @@ body{
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    text-align: left;
 }
 
 /* location-trending*/
@@ -99,9 +120,10 @@ body{
     background-color: #ffffff;
     border-radius: 3px;
     position: absolute;
-    top: 270px;
+    top: 250px;
     left: 120px;
     border: thin solid #d3d3d3;
+    display: none;
 }
 
 .bloc-title{
@@ -177,10 +199,10 @@ body{
     height: auto;
     position: absolute;
     top: 60px;
-    left: 405px;
     background-color: #ffffff;
     border-radius: 3px;
     border: thin solid #d3d3d3;
+    display: none;
 }
 
 .suggestion-bloc{
@@ -448,13 +470,13 @@ body{
     vertical-align: top;
     transition: .6s ease;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .simple-post-details{
     margin-top: 10px;
     display: inline-block;
-    width: 90%;
+    max-width: 525px;
 }
 
 .simple-post-username{

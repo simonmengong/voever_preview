@@ -26,7 +26,7 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <form class="form-inline mr-auto" data-background-color style="margin-top: 10px">
-                    <div class="input-group no-border">
+                    <div class="input-group no-border" id="search-input">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-search" style="color: #d3d3d3"></i></span>
                         </div>
@@ -39,14 +39,14 @@
                     </a>
                 </div>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link fa fa-home" href="#" style="font-size: 30px; color: #d3d3d3"> <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link now-ui-icons ui-1_bell-53" href="#" style="font-size: 24px; color: #d3d3d3"> <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fa fa-comments-o" href="#" style="font-size: 30px; color: #d3d3d3"></a>
+                        <a class="nav-link now-ui-icons ui-2_chat-round" href="#" style="font-size: 24px; color: #d3d3d3"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link far fa-user-circle" href="#" style="font-size: 30px; color: #d3d3d3"></a>
+                        <a class="nav-link now-ui-icons arrows-1_minimal-down" href="#" style="font-size: 16px; color: #d3d3d3"></a>
                     </li>
                 </ul>
             </div>
@@ -55,21 +55,21 @@
     <!--   Nav Bar   -->
 
     <!--   Profile Info   -->
-    <div class="profile-info">
+    <div class="profile-info" id="profile-info">
         <div class="profil-info-header">
             <img src="../static/img/login.jpg">
         </div>
         <div class="container" style="margin-top: 75px">
             <a class="photo-container">
                 <img src="../static/img/logo.png" alt="" class="homepp">
-                <p style="display: inline; font-weight: bold; color: #000000">Username</p>
+                <p class="pi-username">Username</p>
             </a>
-            <div class="content">
-                <div class="social-description" style="display:inline-block; margin-right: 25px">
+            <div class="social-desc">
+                <div class="social-desc1" style="display:inline-block; margin-right: 25px">
                     <p class="desc-title">Following</p>
                     <p class="desc-digit">66</p>
                 </div>
-                <div class="social-description" style="display:inline-block;">
+                <div class="social-desc2" style="display:inline-block;">
                     <p class="desc-title">Followers</p>
                     <p class="desc-digit">54</p>
                 </div>
@@ -79,7 +79,7 @@
 
     <!--   Top 10   -->
 
-    <div class="location-trending">
+    <div class="location-trending" id="location-trending">
         <div class="container">
             <p class="bloc-title">Nigeria Top 10</p>
             <div class="bloc-music">
@@ -103,7 +103,7 @@
 
     <!--   Principal Bloc   -->
 
-    <div class="principal-bloc">
+    <div class="principal-bloc" id="principal-bloc">
 
         <!--   Suggestion Bloc   -->
 
@@ -278,6 +278,25 @@
             blocnotif.style.display = 'none';
             bloctest.style.display = 'block';
         }
+
+        function refresh() {
+            var pi = document.getElementById("profile-info");
+            var lt = document.getElementById("location-trending");
+            var bp = document.getElementById("principal-bloc");
+            var input = document.getElementById("search-input");
+            var left = input.offsetLeft - 10;
+            pi.style.left = left + 'px';
+            pi.style.display = 'block';
+            lt.style.left = left + 'px';
+            lt.style.display = "block";
+            bp.style.left = left + 285 + 'px';
+            bp.style.display = "block";
+        }
+
+        window.addEventListener('resize', function(){
+            refresh();
+        }, true);
+        refresh();
     </script>
 </body>
 </html>
