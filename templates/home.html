@@ -22,34 +22,49 @@
 </head>
 <body>
     <!--   Nav Bar   -->
-    <nav class="navbar navbar-expand-lg homenav fixed-top" style="height: 50px">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <form class="form-inline mr-auto" data-background-color style="margin-top: 10px">
-                    <div class="input-group no-border" id="search-input">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-search" style="color: #d3d3d3"></i></span>
+
+    <nav class="navbar navbar-expand-md homenav fixed-top" style="height: 50px">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" style="margin-left: 7%" id="nb-left">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <form class="form-inline mr-auto" data-background-color style="margin-top: 10px">
+                        <div class="input-group no-border" id="search-input">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-search" style="color: #d3d3d3"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search...">
                         </div>
-                        <input type="text" class="form-control" placeholder="Search...">
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">
+                <img src="../static/img/homelogo.png" class="homelogo"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" style="margin-right: 7%" id="nb-right">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link now-ui-icons ui-1_bell-53" href="#" style="font-size: 24px; color: #d3d3d3"> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link now-ui-icons ui-2_chat-round" href="#" style="font-size: 24px; color: #d3d3d3"></a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown button-dropdown">
+                        <a class="nav-link now-ui-icons arrows-1_minimal-down dropdown-toggle" href="#" style="font-size: 16px; color: #d3d3d3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="now-ui-icons users_single-02"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="now-ui-icons ui-1_settings-gear-63"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Log out</a>
+                        </div>
                     </div>
-                </form>
-                <div class="ml-auto mr-auto">
-                    <a href="#">
-                        <img src="../static/img/homelogo.png" class="homelogo"/>
-                    </a>
-                </div>
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link now-ui-icons ui-1_bell-53" href="#" style="font-size: 24px; color: #d3d3d3"> <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link now-ui-icons ui-2_chat-round" href="#" style="font-size: 24px; color: #d3d3d3"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link now-ui-icons arrows-1_minimal-down" href="#" style="font-size: 16px; color: #d3d3d3"></a>
-                    </li>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
     </nav>
     <!--   Nav Bar   -->
@@ -151,8 +166,8 @@
                     <form data-background-color>
                         <textarea class="form-control composer-input"
                                   id="composer" rows="4"  placeholder="What's happening?"
-                                 onkeydown="return limitLines(this, event)"
-                                onfocus="compose()" onblur="uncompose()">
+                                  onkeydown="return limitLines(this, event)"
+                                  onfocus="compose()" onblur="uncompose()">
                         </textarea>
                         <button type="submit" class="btn btn-primary pull-right composer-post" id="composer-post">Post</button>
                     </form>
@@ -203,6 +218,9 @@
             </div>
         </div>
     </div>
+    <button class="btn btn-primary btn-icon btn-round bull-msg">
+        <i class="now-ui-icons ui-2_chat-round"></i>
+    </button>
 
     <!--   Core JS Files   -->
     <script src="../static/js/core/jquery.min.js" type="text/javascript"></script>
@@ -278,19 +296,57 @@
             blocnotif.style.display = 'none';
             bloctest.style.display = 'block';
         }
-
+        var s = document.getElementById("principal-bloc").style;
         function refresh() {
             var pi = document.getElementById("profile-info");
+            var nbl = document.getElementById("nb-left");
+            var nbr = document.getElementById("nb-right");
+            nbl.style = "margin-left: 7%";
+            nbr.style = "margin-right: 7%";
             var lt = document.getElementById("location-trending");
             var bp = document.getElementById("principal-bloc");
             var input = document.getElementById("search-input");
-            var left = input.offsetLeft - 10;
-            pi.style.left = left + 'px';
-            pi.style.display = 'block';
-            lt.style.left = left + 'px';
-            lt.style.display = "block";
-            bp.style.left = left + 285 + 'px';
-            bp.style.display = "block";
+            var left = input.offsetLeft;
+            var bpw = document.body.clientWidth - 2*(left + 285);
+            if(bpw>=550){
+                pi.style.left = left + 'px';
+                pi.style.display = 'block';
+                lt.style.left = left + 'px';
+                lt.style.display = "block";
+                bp.style = s;
+                bp.style.left = left + 285 + 'px';
+                bp.style.width = document.body.clientWidth - 2*(left + 285) + 'px';
+                bp.style.display = "block";
+                reload("composer");
+            }
+            else{
+                pi.style.display = 'none';
+                lt.style.display = 'none';
+                bp.style = "left:0;right:0;margin-left:auto;margin-right:auto";
+                if(document.body.clientWidth < 835) {
+                    bp.style.width = document.body.clientWidth * 0.8 + 'px';
+                }
+                else{
+                    nbl.style = "margin-left: 3%";
+                    nbr.style = "margin-right: 3%";
+                    var left1 = input.offsetLeft;
+                    pi.style.left = left1 + 'px';
+                    pi.style.display = 'block';
+                    lt.style.left = left1 + 'px';
+                    lt.style.display = "block";
+                    bp.style = s;
+                    bp.style.left = left1 + 285 + 'px';
+                    bp.style.width = document.body.clientWidth - (2*left1 + 285) + 'px';
+                    bp.style.display = "block";
+                    reload("composer");
+                }
+                bp.style.display = "block";
+            }
+        }
+
+        function reload(e){
+            var c = document.getElementById("composer");
+            c.value = '';
         }
 
         window.addEventListener('resize', function(){

@@ -393,7 +393,7 @@ body{
 .composer-input:-moz-placeholder { color: #a7a7a7!important; }  /* Mozilla Firefox 4 to 18 */
 .composer-input::-moz-placeholder { color: #a7a7a7!important; }  /* Mozilla Firefox 19+ */
 .composer-input:-ms-input-placeholder { color: #a7a7a7!important; }  /* Internet Explorer 10-11 */
-.composer-input::-ms-input-placeholder { color: #a7a7a7!important; }  /* Microsoft Edge */
+.composer-input:-ms-input-placeholder { color: #a7a7a7!important; }  /* Microsoft Edge */
 
 .composer-input:focus{
     background-color: #ffffff!important;
@@ -476,7 +476,7 @@ body{
 .simple-post-details{
     margin-top: 10px;
     display: inline-block;
-    max-width: 525px;
+    max-width: 80%;
 }
 
 .simple-post-username{
@@ -484,6 +484,7 @@ body{
     font-size: 14px;
     line-height: 14px;
     margin-bottom: 0;
+
 }
 
 .simple-post-username span{
@@ -519,3 +520,19 @@ body{
     margin-top: 8px;
 }
 
+.bull-msg{
+    width: 70px!important;
+    height: 70px!important;
+    border-radius: 50% !important;
+    z-index: 9999!important;
+    position: fixed!important;
+    right: 35px!important;
+    bottom: 25px!important;
+    font-size: 24px!important;
+    text-align: center!important;
+    color: #d3d3d3!important;
+}
+
+.bull-msg:hover{
+    background-color: #9f1c17;
+}
