@@ -23,7 +23,7 @@
 <body>
     <!--   Nav Bar   -->
 
-    <nav class="navbar navbar-expand-md homenav fixed-top" style="height: 50px">
+    <nav class="navbar navbar-expand-md homenav fixed-top no-mob">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" style="margin-left: 7%" id="nb-left">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -67,27 +67,60 @@
             </ul>
         </div>
     </nav>
-    <!--   Nav Bar   -->
+
+    <nav class="navbar navbar-toggleable-md justify-content-between home-nav fixed-top mob">
+        <a class="navbar-brand" href="#">
+            <img src="../static/img/homelogo.png" class="homelogo"/>
+        </a>
+        <a class="nav-link nav-link-mob now-ui-icons ui-1_bell-53" href="#" style="font-size: 24px; color: #d3d3d3"> <span class="sr-only">(current)</span></a>
+        <a class="nav-link now-ui-icons ui-2_chat-round" href="#" style="font-size: 24px; color: #d3d3d3"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="button-bar" style="color: #d3d3d3"></span>
+            <span class="button-bar" style="color: #d3d3d3"></span>
+            <span class="button-bar" style="color: #d3d3d3"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav text-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Top 10</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--   End Nav Bar   -->
 
     <!--   Profile Info   -->
     <div class="profile-info" id="profile-info">
         <div class="profil-info-header">
             <img src="../static/img/login.jpg">
         </div>
-        <div class="container" style="margin-top: 75px">
-            <a class="photo-container">
+        <div class="container photo-container">
+            <p>
                 <img src="../static/img/logo.png" alt="" class="homepp">
-                <p class="pi-username">Username</p>
-            </a>
-            <div class="social-desc">
-                <div class="social-desc1" style="display:inline-block; margin-right: 25px">
-                    <p class="desc-title">Following</p>
-                    <p class="desc-digit">66</p>
-                </div>
-                <div class="social-desc2" style="display:inline-block;">
-                    <p class="desc-title">Followers</p>
-                    <p class="desc-digit">54</p>
-                </div>
+                <a class="pi-username">Username</a>
+            </p>
+        </div>
+        <div class="social-desc">
+            <div class="social-desc1" style="display:inline-block; margin-right: 25px">
+                <p class="desc-title">Following</p>
+                <p class="desc-digit">66</p>
+            </div>
+            <div class="social-desc2" style="display:inline-block;">
+                <p class="desc-title">Followers</p>
+                <p class="desc-digit">54</p>
             </div>
         </div>
     </div>
@@ -298,6 +331,7 @@
         }
         var s = document.getElementById("principal-bloc").style;
         function refresh() {
+            var c = document.getElementById("composer");
             var pi = document.getElementById("profile-info");
             var nbl = document.getElementById("nb-left");
             var nbr = document.getElementById("nb-right");
@@ -315,16 +349,22 @@
                 lt.style.display = "block";
                 bp.style = s;
                 bp.style.left = left + 285 + 'px';
-                bp.style.width = document.body.clientWidth - 2*(left + 285) + 'px';
+                var w = document.body.clientWidth - 2*(left + 285);
+                bp.style.width = w + 'px';
+                c.style.width = w - 75 + 'px';
                 bp.style.display = "block";
                 reload("composer");
             }
             else{
+                var w2 = document.body.clientWidth;
                 pi.style.display = 'none';
                 lt.style.display = 'none';
                 bp.style = "left:0;right:0;margin-left:auto;margin-right:auto";
-                if(document.body.clientWidth < 835) {
-                    bp.style.width = document.body.clientWidth * 0.8 + 'px';
+                if(w2 < 835) {
+                    bp.style.width = '100%';
+                    bp.style.top = '80px';
+                    bp.style.border = "none";
+                    c.style.width = w2 - 85 + 'px';
                 }
                 else{
                     nbl.style = "margin-left: 3%";
@@ -336,7 +376,7 @@
                     lt.style.display = "block";
                     bp.style = s;
                     bp.style.left = left1 + 285 + 'px';
-                    bp.style.width = document.body.clientWidth - (2*left1 + 285) + 'px';
+                    bp.style.width = w2 - (2*left1 + 285) + 'px';
                     bp.style.display = "block";
                     reload("composer");
                 }
