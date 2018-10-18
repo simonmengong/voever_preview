@@ -82,9 +82,19 @@
         </a>
       </div>
     </nav>
-    <div class="imgdesc nomob" id="imgdesc">
-      <img src="../static/img/respon.png" />
-      <a class="btn btn-primary btn-round btn-lg btn-block" id="sb" onclick="signup()">Create Account</a>
+    <div class="content">
+      <div class="container nomob">
+        <div class="col-md-7 ml-auto sweettrans" id="imgdesc">
+          <div class="card card-plain">
+            <div class="card-body">
+              <p class="text-justify desc">
+                Welcome to <span>Voever</span>. <span>Share</span> your playlist, <span>Discover</span> new songs and <span>Make new friends</span> along the way.
+              </p>
+              <a class="btn btn-round btn-lg btn-block col-md-5 sb" id="sb" onclick="signup()">Create Account</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Slider for the signup form -->
     <div class="slidesignup nomob" id="slidesignup">
@@ -305,7 +315,7 @@
       var imgdesc = document.getElementById('imgdesc');
       var sb = document.getElementById('sb');
       fl.style.display = "none";
-      imgdesc.classList.add("imgdesc2");
+      imgdesc.classList.add("translated");
       ss.classList.add("slidesignup2");
       sb.style.display = "none";
     }
@@ -316,7 +326,7 @@
       var imgdesc = document.getElementById('imgdesc');
       var sb = document.getElementById('sb');
       ss.classList.remove("slidesignup2");
-      imgdesc.classList.remove('imgdesc2');
+      imgdesc.classList.remove('translated');
       sb.style.display = 'block';
       fl.style.display = 'block';
     }

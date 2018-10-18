@@ -608,35 +608,6 @@
   }
 }
 
-.imgdesc{
-  position: absolute;
-  top: 25%;
-  left: 42%;
-  width: 50%;
-  height: 60%;
-  transition: .6s ease;
-}
-
-.imgdesc img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-height: 80%;
-  width: auto;
-}
-
-.imgdesc2{
-  left: 15%;
-}
-
-.imgdesc a{
-  position: absolute;
-  max-width: 200px;
-  top: 85%;
-  left: 44%;
-  background-color: #818181;
-}
-
 .sweettrans{
   transition: .6s ease;
 }
@@ -666,4 +637,31 @@
 
 #formsignupmob{
   display: none;
+}
+
+.desc{
+  font-size: 38px;
+  font-weight: 500;
+  color: rgba(255,255,255, .6)
+}
+
+.desc span{
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: .6s ease;
+}
+
+.sb{
+  margin-left: 38.5%;
+}
+
+@media (max-width: 1199px){
+  .sb{
+    margin-left: 32%;
+  }
+}
+
+.translated{
+  margin-right: 40%;
 }
