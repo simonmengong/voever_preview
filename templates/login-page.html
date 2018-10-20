@@ -38,32 +38,32 @@
         <form class="form" method="" action="" id="formlogin">
           <ul class="navbar-nav" style="color: #ffffff">
             <li class="nav-item">
-              <div class="input-group no-border input-lg">
+              <div class="input-group no-border input-lg" id="login-user-div1">
                 <div class="input-group-prepend">
                       <span class="input-group-text" style="color: #ffffff">
                         <i class="now-ui-icons users_circle-08"></i>
                       </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username or Email..." style="color: #ffffff">
+                <input type="text" class="form-control" placeholder="Username or Email..." style="color: #ffffff" id="login-user-input1" oninput="user1_input()"/>
               </div>
             </li>
             <li class="nav-item">
-              <div class="input-group no-border input-lg" >
+              <div class="input-group no-border input-lg" id="login-pwd-div1">
                 <div class="input-group-prepend">
                     <span class="input-group-text" style="color: #ffffff">
                       <i class="now-ui-icons ui-1_lock-circle-open"></i>
                     </span>
                 </div>
-                <input type="password" placeholder="Password..." class="form-control" style="color: #ffffff"/>
+                <input type="password" placeholder="Password..." class="form-control" style="color: #ffffff" id="login-pwd-input1" oninput="pwd1_input()"/>
               </div>
               <div class="pull-left" style="margin-left: 25px">
                 <h6>
-                  <a href="#pablo" class="link">Forgot Password?</a>
+                  <a href="contact" class="link">Forgot Password?</a>
                 </h6>
               </div>
             </li>
             <li class="nav-item">
-              <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block nav-link sweettrans">Log In</a>
+              <a class="btn btn-primary btn-round btn-lg btn-block nav-link sweettrans" onclick="login_pressed()">Log In</a>
             </li>
           </ul>
         </form>
@@ -87,10 +87,16 @@
         <div class="col-md-7 ml-auto sweettrans" id="imgdesc">
           <div class="card card-plain">
             <div class="card-body">
-              <p class="text-justify desc">
-                Welcome to <span>Voever</span>. <span>Share</span> your playlist, <span>Discover</span> new songs and <span>Make new friends</span> along the way.
-              </p>
-              <a class="btn btn-round btn-lg btn-block col-md-5 sb" id="sb" onclick="signup()">Create Account</a>
+                <p class="text-center desc1">
+                    Welcome to <span class="v">V</span><span>OEVER</span>.
+                </p>
+                <p class="text-center desc">
+                    <span>SHARE</span> your favorites playlists,
+                </p>
+                <p class="text-center desc">
+                  and <span>MAKE</span> new friends along the way.
+                </p>
+              <a class="btn btn-round btn-lg btn-block col-md-5 mx-auto sb" id="sb" onclick="signup()">Create Account</a>
             </div>
           </div>
         </div>
@@ -106,54 +112,54 @@
                 <div class="card-body">
                   <span id="closess" onclick="login()">&times;</span>
                   <h3 style="margin-top: 60px">Sign Up</h3>
-                  <div class="input-group no-border input-lg">
+                  <div class="input-group no-border input-lg" id="signup-email-div1">
                     <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_email-85"></i>
                     </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Email...">
+                    <input type="text" class="form-control" placeholder="Email..." id="signup-email-input1" oninput="su_email1_input()">
                   </div>
-                  <div class="input-group no-border input-lg">
+                  <div class="input-group no-border input-lg" id="signup-username-div1">
                     <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                     </div>
-                    <input type="text" placeholder="Username..." class="form-control" />
+                    <input type="text" placeholder="Username..." class="form-control" id="signup-username-input1" oninput="su_user1_input()"/>
                   </div>
-                  <div class="input-group no-border input-lg">
+                  <div class="input-group no-border input-lg" id="signup-pwd-div1">
                     <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_lock-circle-open"></i>
                     </span>
                     </div>
-                    <input type="password" placeholder="Password..." class="form-control" />
+                    <input type="password" placeholder="Password..." class="form-control" id="signup-pwd-input1" oninput="su_pwd1_input()"/>
                   </div>
-                  <div class="input-group no-border input-lg">
+                  <div class="input-group no-border input-lg" id="signup-cpwd-div1">
                     <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_lock-circle-open"></i>
                     </span>
                     </div>
-                    <input type="password" placeholder="Confirm Password..." class="form-control" />
+                    <input type="password" placeholder="Confirm Password..." class="form-control" id="signup-cpwd-input1" oninput="su_cpwd1_input()"/>
                   </div>
                 </div>
                 <div class="card-footer text-center">
-                  <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block sweettrans">Sign Up</a>
+                  <a class="btn btn-primary btn-round btn-lg btn-block sweettrans" onclick="signup_pressed()">Sign Up</a>
                   <div>
                     <p class="link">By Signing up you agree to our <a href="#pablo" class="link">Terms & Privacy</a> Policy.</p>
                   </div>
                 </div>
                 <p>Or Sign Up with</p>
                 <div class="flex-c p-b-112">
-                  <a href="#" class="login100-social-item fcbk">
+                  <a href="{% url 'social:begin' 'facebook' %}" class="login100-social-item fcbk">
                     <i class="fa fa-facebook-f"></i>
                   </a>
-                  <a href="#" class="login100-social-item twit">
+                  <a href="{% url 'social:begin' 'twitter' %}" class="login100-social-item twit">
                     <i class="fa fa-twitter"></i>
                   </a>
-                  <a href="#" class="login100-social-item">
+                  <a href="{% url 'social:begin' 'google-oauth2' %}" class="login100-social-item">
                     <img src="../static/img/icon-google.png">
                   </a>
                 </div>
@@ -163,33 +169,37 @@
         </div>
       </div>
     </div>
+
     <!-- End of Slider -->
+
     <div class="content mob">
       <div class="container">
         <div class="col-md-10 mr-auto ml-auto">
           <div class="card card-login card-plain">
+
             <!-- login form for mobile  -->
+
             <form class="form" id="formloginmob" method="" action="">
               <div class="card-body">
-                <div class="input-group no-border input-lg">
+                <div class="input-group no-border input-lg" id="login-user-div2">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="Username or Email..." class="form-control" />
+                  <input type="text" placeholder="Username or Email..." class="form-control" id="login-user-input2" oninput="user2_input()"/>
                 </div>
-                <div class="input-group no-border input-lg">
+                <div class="input-group no-border input-lg" id="login-pwd-div2">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_lock-circle-open"></i>
                     </span>
                   </div>
-                  <input type="password" placeholder="Password..." class="form-control" />
+                  <input type="password" placeholder="Password..." class="form-control" id="login-pwd-input2" oninput="pwd2_input()"/>
                 </div>
               </div>
               <div class="card-footer text-center">
-                <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block sweettrans">Log In</a>
+                <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block sweettrans" onclick="login_pressed()">Log In</a>
                 <div class="pull-left">
                   <h6>
                     <a class="link" onclick="signupmob()" style="cursor: pointer">Create Account</a>
@@ -197,64 +207,67 @@
                 </div>
                 <div class="pull-right">
                   <h6>
-                    <a href="#pablo" class="link">Forgot Password?</a>
+                    <a href="contact" class="link">Forgot Password?</a>
                   </h6>
                 </div>
               </div>
             </form>
+
             <!-- End login form for mobile  -->
+
             <!-- sign up form for mobile  -->
+
             <form class="form formsignup" id="formsignupmob" method="" action="">
               <div class="card-body">
                 <h3>Sign Up</h3>
-                <div class="input-group no-border input-lg">
+                <div class="input-group no-border input-lg" id="signup-email-div2">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_email-85"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Email...">
+                  <input type="text" class="form-control" placeholder="Email..." id="signup-email-input2" oninput="su_email2_input()">
                 </div>
-                <div class="input-group no-border input-lg">
+                <div class="input-group no-border input-lg" id="signup-username-div2">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="Username..." class="form-control" />
+                  <input type="text" placeholder="Username..." class="form-control" id="signup-username-input2" oninput="su_user2_input()"/>
                 </div>
-                <div class="input-group no-border input-lg">
+                <div class="input-group no-border input-lg" id="signup-pwd-div2">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_lock-circle-open"></i>
                     </span>
                   </div>
-                  <input type="password" placeholder="Password..." class="form-control" />
+                  <input type="password" placeholder="Password..." class="form-control" id="signup-pwd-input2" oninput="su_pwd2_input()"/>
                 </div>
-                <div class="input-group no-border input-lg">
+                <div class="input-group no-border input-lg" id="signup-cpwd-div2">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="now-ui-icons ui-1_lock-circle-open"></i>
                     </span>
                   </div>
-                  <input type="password" placeholder="Confirm Password..." class="form-control" />
+                  <input type="password" placeholder="Confirm Password..." class="form-control" id="signup-cpwd-input2" oninput="su_cpwd2_input()"/>
                 </div>
               </div>
               <div class="card-footer text-center">
-                <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block sweettrans">Sign Up</a>
+                <a class="btn btn-primary btn-round btn-lg btn-block sweettrans" onclick="signup_pressed()">Sign Up</a>
                 <div>
                   <p class="link">By Signing up you agree to our <a href="#pablo" class="link">Terms & Privacy</a> Policy.</p>
                 </div>
               </div>
               <p>Or Sign Up with</p>
               <div class="flex-c p-b-112">
-                <a href="#" class="login100-social-item fcbk">
+                <a href="{% url 'social:begin' 'facebook' %}" class="login100-social-item fcbk">
                   <i class="fa fa-facebook-f"></i>
                 </a>
-                <a href="#" class="login100-social-item twit">
+                <a href="{% url 'social:begin' 'twitter' %}" class="login100-social-item twit">
                   <i class="fa fa-twitter"></i>
                 </a>
-                <a href="#" class="login100-social-item">
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="login100-social-item">
                   <img src="../static/img/icon-google.png">
                 </a>
               </div>
@@ -264,7 +277,9 @@
                 </h6>
               </div>
             </form>
+
             <!-- End sign up form for mobile  -->
+
           </div>
         </div>
       </div>
@@ -279,7 +294,7 @@
               </a>
             </li>
             <li>
-              <a href="http://blog.creative-tim.com">
+              <a href="terms_and_privacy">
                 Privacy & Terms
               </a>
             </li>
@@ -308,44 +323,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
   <script src="../static/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
-  <script>
-    function signup(){
-      var ss = document.getElementById('slidesignup');
-      var fl = document.getElementById('formlogin');
-      var imgdesc = document.getElementById('imgdesc');
-      var sb = document.getElementById('sb');
-      fl.style.display = "none";
-      imgdesc.classList.add("translated");
-      ss.classList.add("slidesignup2");
-      sb.style.display = "none";
-    }
-
-    function login(){
-      var ss = document.getElementById('slidesignup');
-      var fl = document.getElementById('formlogin');
-      var imgdesc = document.getElementById('imgdesc');
-      var sb = document.getElementById('sb');
-      ss.classList.remove("slidesignup2");
-      imgdesc.classList.remove('translated');
-      sb.style.display = 'block';
-      fl.style.display = 'block';
-    }
-
-    function signupmob(){
-      var fs = document.getElementById('formsignupmob');
-      var fl = document.getElementById('formloginmob');
-      fl.style.display = "none";
-      fs.style.display = "block";
-    }
-
-    function loginmob(){
-      var fs = document.getElementById('formsignupmob');
-      var fl = document.getElementById('formloginmob');
-      fs.style.display = "none";
-      fl.style.display = "block";
-    }
-
-  </script>
+  <!-- page main functions -->
+  <script src="../static/js/login.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -1,0 +1,4 @@
+app id: amzn1.devportal.mobileapp.65af049fb7fc4d10bbd94f1632075661
+id release: amzn1.devportal.apprelease.acb965d706a1429cb516b31aeb068baf
+
+promoter1: Deepankar Sen

@@ -509,7 +509,7 @@
 .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
 .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
 .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
-.form-control::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
+.form-control:-ms-input-placeholder { color: white; }  /* Microsoft Edge */
 
 /*//////////////////////////////////////////////////////////////////
 [ Social item ]*/
@@ -639,29 +639,54 @@
   display: none;
 }
 
-.desc{
+.desc, .desc1{
   font-size: 38px;
   font-weight: 500;
-  color: rgba(255,255,255, .6)
+  color: rgba(255,255,255,.7);
 }
 
-.desc span{
-  text-decoration: none;
-  color: #ffffff;
-  cursor: pointer;
-  transition: .6s ease;
+.desc1{
+  margin-top: 40px;
+}
+
+.desc{
+  font-size:28px;
+  line-height: 30px;
 }
 
 .sb{
-  margin-left: 38.5%;
+  margin-top: 100px;
 }
 
-@media (max-width: 1199px){
-  .sb{
-    margin-left: 32%;
-  }
+.desc1 span, .desc3 span{
+  color: #ffffff;
+}
+
+.desc1 .v{
+  font-size: 54px;
+}
+
+.desc span{
+  color: #ffffff;
+}
+
+.desc .b{
+  font-weight: bold;
+}
+
+#imgdesc{
+  vertical-align: middle!important;
 }
 
 .translated{
   margin-right: 40%;
+}
+
+.has-success:after {
+  color: #18ce0f!important;
+}
+
+
+.has-danger:after {
+  color: #FF3636!important;
 }
